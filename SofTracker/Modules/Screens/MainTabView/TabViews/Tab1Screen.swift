@@ -3,11 +3,13 @@
 //
 import SwiftUI
 
-struct Tab1Screen: View {
+struct HomeScreen: View {
+    var title: String?
+    
     var body: some View {
         VStack {
             Text(AppStrings.Tab) + Text("1")
-            WeatherScreen()  // Use and Delete Screen , This should be removed
+            WeatherScreen()
         }
         .onAppear {
             AnalyticsManager.logScreenView(screenName: String(describing: Self.self))
@@ -16,5 +18,5 @@ struct Tab1Screen: View {
 }
 
 #Preview {
-    Tab1Screen()
+    HomeScreen()
 }

@@ -13,15 +13,20 @@ struct WeatherScreen: View {
                 VStack(spacing: 20) {
                     if !viewModel.isDataLoading {
                         ForEach(viewModel.weatherData, id: \.self) { data in
-                            CardView(title: getLocalString(data.name),
-                                     subTitle: makeDescription(weatherItem: data))
-                                .onTapGesture {
-                                    viewModel.selectedCardIndex = viewModel.weatherData.firstIndex(of: data)!
-                                    isInfoScreenPresented = true
-                                }
-                        }.fullScreenCover(isPresented: $isInfoScreenPresented, content: {
-                            WeatherDetailScreen(weatherData: viewModel.weatherData[viewModel.selectedCardIndex])
-                        })
+                            CardView(
+                                title: getLocalString(data.name),
+                                subTitle: makeDescription(weatherItem: data)
+                            )
+                            .onTapGesture {
+                                viewModel.selectedCardIndex = viewModel.weatherData.firstIndex(of: data)!
+                                isInfoScreenPresented = true
+                            }
+                        }.fullScreenCover(
+                            isPresented: $isInfoScreenPresented,
+                            content: {
+                                WeatherDetailScreen(weatherData: viewModel.weatherData[viewModel.selectedCardIndex])
+                            }
+                        )
                     }
                 }
                 .padding(.top)

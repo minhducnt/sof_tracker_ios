@@ -3,11 +3,11 @@
 //
 import SwiftUI
 
-struct Tab2Screen: View {
+struct NotificationScreen: View {
     var body: some View {
         VStack {
             Text(AppStrings.Tab) + Text("2")
-            ProfileScreen()  // Use and Delete Screen , This should be removed
+            ProfileScreen()
         }
         .onAppear {
             AnalyticsManager.logScreenView(screenName: String(describing: Self.self))
@@ -16,5 +16,5 @@ struct Tab2Screen: View {
 }
 
 #Preview {
-    Tab2Screen()
+    NotificationScreen()
 }
