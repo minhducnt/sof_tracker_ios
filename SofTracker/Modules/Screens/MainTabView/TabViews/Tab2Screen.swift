@@ -3,7 +3,7 @@
 //
 import SwiftUI
 
-struct NotificationScreen: View {
+struct Tab2Screen: View {
     var body: some View {
         VStack {
             Text(AppStrings.Tab) + Text("2")
@@ -16,5 +16,5 @@ struct NotificationScreen: View {
 }
 
 #Preview {
-    NotificationScreen()
+    Tab2Screen()
 }

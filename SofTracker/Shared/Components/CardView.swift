@@ -13,22 +13,41 @@ struct CardView: View {
 
     var body: some View {
         HStack {
+            VStack {
+                Spacer()
+                Image(systemName: "sun.min")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 80, height: 61)
+                    .clipShape(Circle())
+                    .foregroundColor(.primarySof)
+                Spacer()
+            }
+            
             VStack(spacing: 20) {
+                Spacer()
                 Text(title)
                     .font(.notoSansBold20)
-                    .foregroundColor(.primaryNavyBlue)
+                    .foregroundColor(.primarySof)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Text(subTitle)
                     .font(.notoSansMedium16)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundColor(.secondaryLightBlue)
+                    .foregroundColor(.secondarySof)
                     .multilineTextAlignment(.leading)
+                Spacer()
             }
-            Image(systemName: "info.circle")
-                .resizable()
-                .frame(width: 25, height: 25)
-                .foregroundColor(.secondaryLightBlue)
+            
+            VStack {
+                
+                Image(systemName: "info.circle")
+                    .resizable()
+                    .frame(width: 25, height: 25)
+                    .foregroundColor(.secondarySof)
+                Spacer()
+            }
         }
+        .frame(height: 80)
         .padding()
         .background(backgroundColor)
         .cornerRadius(cornerRadius)
@@ -36,6 +55,6 @@ struct CardView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
     CardView(infoAction: {})
 }

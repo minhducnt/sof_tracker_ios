@@ -3,7 +3,6 @@
 //
 import FirebaseCrashlytics
 
-
 class ErrorHandler {
     
     static func logError(message: String, error: Error) {

@@ -13,7 +13,7 @@ struct TextButton: View {
     var onClick: () -> Void
     var text: LocalizedStringKey
     var style: Style = .filled
-    var color: Color = .primaryNavyBlue
+    var color: Color = .primarySof
 
     // MARK: - Views
 
@@ -39,12 +39,12 @@ struct TextButton: View {
 
 #Preview {
     VStack {
-        TextButton(onClick: {}, text: "Click Me", style: .filled, color: .primaryNavyBlue)
-        TextButton(onClick: {}, text: "Click Me", style: .outline, color: .primaryNavyBlue)
-        TextButton(onClick: {}, text: "Click Me", style: .textOnly, color: .primaryNavyBlue)
+        TextButton(onClick: {}, text: "Click Me", style: .filled, color: .primarySof)
+        TextButton(onClick: {}, text: "Click Me", style: .outline, color: .primarySof)
+        TextButton(onClick: {}, text: "Click Me", style: .textOnly, color: .primarySof)
         HStack {
-            TextButton(onClick: {}, text: "Click Me", style: .outline, color: .primaryNavyBlue)
-            TextButton(onClick: {}, text: "Click Me", style: .filled, color: .primaryNavyBlue)
+            TextButton(onClick: {}, text: "Click Me", style: .outline, color: .primarySof)
+            TextButton(onClick: {}, text: "Click Me", style: .filled, color: .primarySof)
         }
     }
     .padding()

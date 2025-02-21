@@ -6,7 +6,7 @@ import SwiftUI
 struct RootCoordinator: View {
     enum Root {
         case splash
-        case authorisation
+        case authorization
         case userDetails
         case mainApp
     }
@@ -26,7 +26,7 @@ struct RootCoordinator: View {
                     .onAppear {
                         appStart()
                     }
-            case .authorisation:
+            case .authorization:
                 AuthorizationScreen()
             case .userDetails:
                 UserDetailsScreen(onCompleted: {
@@ -60,7 +60,7 @@ struct RootCoordinator: View {
             root = .splash
         }
         else if !authenticationManager.isAuthenticated {
-            root = .authorisation
+            root = .authorization
             rootViewModel.setInitialScreenVisitedStatus()
         }
         else if !rootViewModel.isUserDetailsFilled {

@@ -13,13 +13,13 @@ struct Header : View {
             if(hasBackButton) {
                 Button(action: onBackArrowClick) {
                     Image(systemName: "arrow.backward")
-                        .foregroundColor(.primaryNavyBlue)
+                        .foregroundColor(.primarySof)
                 }
             }
             Text(text)
                 .frame(maxWidth: .infinity, alignment: .center)
                 .font(.notoSansBold24)
-                .foregroundColor(.primaryNavyBlue)
+                .foregroundColor(.primarySof)
         }
     }
 }

@@ -5,16 +5,17 @@ import SwiftUI
 
 struct TextKeyValueView: View {
     var key: LocalizedStringKey
-    var value: String
+    var value: String?
 
     var body: some View {
-        HStack {
-            Text(key) + Text(":")
-            Text(value)
-        }.frame(alignment: .leading)
+        Text(value ?? "name")
     }
 }
 
-#Preview {
+#Preview("Data found", traits: .sizeThatFitsLayout) {
+    TextKeyValueView(key: "Name", value: "Nguyễn Thanh Minh Đức")
+}
+
+#Preview("Data not found", traits: .sizeThatFitsLayout) {
     TextKeyValueView(key: "Name", value: "User Name")
 }

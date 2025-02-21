@@ -11,7 +11,7 @@ struct CountryView: View {
             HStack {
                 Text(AppStrings.SelectCountry)
                     .font(.notoSansMedium16)
-                    .foregroundColor(.primaryNavyBlue)
+                    .foregroundColor(.primarySof)
                 Picker(AppStrings.SelectCountryPlaceHolder, selection: $selectedCountry) {
                     ForEach(Constants.countriesOptions, id: \.self) {
                         country in
@@ -33,7 +33,7 @@ struct GenderView: View {
         VStack(alignment: .leading) {
             Text(AppStrings.Gender)
                 .font(.notoSansMedium16)
-                .foregroundColor(.primaryNavyBlue)
+                .foregroundColor(.primarySof)
             Picker(AppStrings.GenderPlaceHolder, selection: $selectedGender) {
                 ForEach(Gender.allCases) { gender in
                     Text(getLocalString(gender.rawValue)).tag(gender)

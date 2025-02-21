@@ -23,11 +23,11 @@ struct ConfirmationSheet: View {
             HStack {
                 TextButton(onClick: {
                     isOpen.toggle()
-                }, text: AppStrings.Cancel, style: .outline, color: .primaryNavyBlue)
+                }, text: AppStrings.Cancel, style: .outline, color: .primarySof)
                 TextButton(onClick: {
                     isConfirmationGiven.toggle()
                     isOpen.toggle()
-                }, text: AppStrings.YesSure, style: .filled, color: .primaryNavyBlue)
+                }, text: AppStrings.YesSure, style: .filled, color: .primarySof)
             }.padding(.bottom, 20)
         }.padding()
     }

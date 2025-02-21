@@ -12,8 +12,8 @@ struct CustomTitleTextFieldView: View {
         VStack(alignment: .leading) {
             Text(label)
                 .font(.notoSansMedium16)
-                .foregroundColor(.primaryNavyBlue)
-            CustomTextField(inputText: $inputText, placeholder: placeholder, cornerRadius: 10, borderColor: .primaryNavyBlue)
+                .foregroundColor(.primarySof)
+            CustomTextField(inputText: $inputText, placeholder: placeholder, cornerRadius: 10, borderColor: .primarySof)
         }
     }
 }

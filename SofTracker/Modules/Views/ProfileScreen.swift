@@ -28,7 +28,7 @@ struct ProfileScreen: View {
                 }, content: {
                     SettingsScreen()
                 })
-                .foregroundColor(.secondaryLightBlue)
+                .foregroundColor(.secondarySof)
                 Spacer()
             }.padding(.horizontal, 25)
         }

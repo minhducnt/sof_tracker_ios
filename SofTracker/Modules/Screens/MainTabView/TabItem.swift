@@ -16,7 +16,7 @@ struct TabItem: View {
                     .frame(width: 40, height: 40)
             }
             Text(title)
-                .font(.notoSansRegular20)
+                .font(FontFamily.NotoSans.regular.swiftUIFont(size: 12))
         }
     }
 }

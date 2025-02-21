@@ -20,7 +20,7 @@ struct AuthorizationScreen: View {
                 passwordField
                 
                 Spacer()
-                TextButton(onClick: onLoginButtonClick, text: AppStrings.Login, color: canLogin() ? .primaryNavyBlue : .gray)
+                TextButton(onClick: onLoginButtonClick, text: AppStrings.Login, color: canLogin() ? .primarySof : .gray)
             }
             .padding()
         }
@@ -33,12 +33,12 @@ struct AuthorizationScreen: View {
         VStack(alignment: .leading) {
             Text(AppStrings.Password)
                 .font(.notoSansMedium16)
-                .foregroundColor(.primaryNavyBlue)
+                .foregroundColor(.primarySof)
             SecureField(AppStrings.Password, text: $password)
                 .padding(14)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.primaryNavyBlue,  lineWidth: 1)
+                        .stroke(Color.primarySof,  lineWidth: 1)
                 )
         }
     }
@@ -46,7 +46,7 @@ struct AuthorizationScreen: View {
     var rectangle: some View {
         return overlay (
             RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.primaryNavyBlue, lineWidth: 1)
+                .stroke(Color.primarySof, lineWidth: 1)
         )
     }
     

@@ -3,7 +3,7 @@
 //
 import SwiftUI
 
-struct HomeScreen: View {
+struct Tab1Screen: View {
     var title: String?
     
     var body: some View {
@@ -18,5 +18,5 @@ struct HomeScreen: View {
 }
 
 #Preview {
-    HomeScreen()
+    Tab1Screen()
 }

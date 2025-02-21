@@ -11,8 +11,12 @@ struct MainTabCoordinator: View {
     var body: some View {
         ZStack(alignment: .top) {
             VStack {
+                // MARK: - Top Side Menu
+
                 topSideMenu
                 
+                // MARK: - Tab View
+
                 tabView
             }
             
@@ -24,15 +28,45 @@ struct MainTabCoordinator: View {
         }
     }
     
+    // MARK: - View
+    
     var tabView: some View {
-        TabView(selection: $viewModel.selectedTab, content: {
-            Tab1Screen().tabItem { TabItem(title: "Home", icon: "1.circle.fill") }.tag(Tab.tab1)
-            Tab2Screen().tabItem { TabItem(title: "Notification", icon: "2.circle.fill") }.tag(Tab.tab2)
-        })
-        .accentColor(.primaryNavyBlue)
+        TabView(
+            selection: $viewModel.selectedTab,
+            content: {
+                Tab1Screen().tabItem {
+                    TabItem(
+                        title: "Home",
+                        icon: viewModel.selectedTab == .tab1 ? "house.fill" : "house"
+                    )
+                }.tag(Tab.tab1)
+                
+                Tab2Screen().tabItem {
+                    TabItem(
+                        title: "Profile",
+                        icon: viewModel.selectedTab == .tab2 ? "person.fill" : "person"
+                    )
+                }.tag(Tab.tab2)
+            }
+        )
+        .accentColor(.primarySof)
         .onAppear {
-            UITabBar.appearance().unselectedItemTintColor = UIColor(Color.secondaryLightBlue)
+            withAnimation {
+                UITabBar.appearance().unselectedItemTintColor = UIColor(.gray.opacity(0.5))
+            }
         }
+        .gesture(
+            DragGesture()
+                .onEnded { value in
+                    let horizontalAmount = value.translation.width
+                            
+                    if horizontalAmount < -50 {
+                        viewModel.switchToNextTab()
+                    } else if horizontalAmount > 50 {
+                        viewModel.switchToPreviousTab()
+                    }
+                }
+        )
     }
     
     var topSideMenu: some View {
@@ -45,15 +79,21 @@ struct MainTabCoordinator: View {
             } label: {
                 Image(systemName: "line.3.horizontal")
                     .resizable()
-                    .frame(width: 32, height: 24)
+                    .frame(width: 24, height: 24)
             }
-            .foregroundColor(.primaryNavyBlue)
+            .foregroundColor(.primarySof)
             .padding()
+            
             Spacer()
+            
+            Image(.logo)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 60)
         }
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
     MainTabCoordinator()
 }
